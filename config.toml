@@ -1,0 +1,5 @@
+baseURL = "http://harsh-sheth.com/blog"
+languageCode = "en-us"
+title = "Harsh's Wonderland"
+publishDir = "docs"
+theme = "hugo-notepadium"
