@@ -1,5 +1,30 @@
 baseURL = "http://harsh-sheth.com/blog"
 languageCode = "en-us"
-title = "Harsh's Wonderland"
+title = "Digital Deficiency"
 publishDir = "docs"
 theme = "hugo-notepadium"
+
+[params]
+style = 'dark'
+dateFormat = "Monday, January 2, 2006"
+logo = "./img/man.png"
+slogan = "A ceaseless desire for digital excellence"
+
+[params.nav]
+showCategories = true
+showTags = true
+
+[[params.nav.custom]]
+title = "Website"
+url = "https://harsh-sheth.com"
+
+[params.profile]
+  enable = true
+  avatar = "./img/me.png"
+  name = "Harsh Sheth"
+  bio = "I am a software engineer out of Markham, Ontario. I have a passion for building great things which empower people"
+  github = "https://github.com/HarshSheth1128"
+  email = "harshsheth1128@gmail.com"
+
+[params.assets]
+css = ["css/categoryButton.css"]

@@ -1,0 +1,30 @@
+{{- $nav := . -}}
+{{- if or $nav.showCategories $nav.showTags $nav.custom -}}
+<div class="nav wrap">
+  <nav class="nav">
+    {{- if $nav.showCategories -}}
+    <div class="icon-button">
+      <i class="fas fa-folder"></i>
+      <a class="nav item" href="{{- `/categories/` | relLangURL -}}">{{- T "Categories" -}}</a>
+    </div>
+    {{- end -}}
+    {{- if $nav.showTags -}}
+    <div class="icon-button">
+      <i class="fas fa-tags"></i>
+      <a class="nav item" href="{{- `/tags/` | relLangURL -}}">{{- T "Tags" -}}</a>
+    </div>
+    {{- end -}}
+    {{- range $nav.custom -}}
+    {{- $url := replace .url "#" "%23" -}}
+    {{- $url = replace $url "." "%2e" -}}
+    {{- $url = $url | safeURL -}}
+    {{- if strings.HasPrefix $url "/" -}}{{- $url = $url | relLangURL -}}{{- end -}}
+    <div class="icon-button">
+      <i class="fas fa-male"></i>
+      <a class="nav item" href="{{- $url -}}" {{- if strings.HasPrefix $url "http" -}}target="_blank"
+        {{- end -}}>{{- .title -}}</a>
+    </div>
+    {{- end -}}
+  </nav>
+</div>
+{{- end -}}
